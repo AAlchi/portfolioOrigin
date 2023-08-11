@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scrollbar-width: 6px;
+  scrollbar-color: #ec4899 rgba(219, 219, 220, 0);
+  transition: all 0.2s;
+  scroll-behavior: smooth;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(219, 219, 220, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ec4899;
+  border-radius: 99999px;
+}
+.image_full {
+  display: block;
+}
+
+.image_mobile {
+  display: none;
+}
+
+@media (max-width: 640px) and (min-width: 320px) {
+  .image_full {
+    display: none;
+  }
+
+  .image_mobile {
+    display: block;
+  }
+}
+
+/* Hide the image on screens where the width is more than the image's width */
+@media (max-width: 950px) {
+  .image-wrapper {
+    display: none;
+  }
+}
+
+/* Hide the image on screens where the height is more than the image's height */
+@media (min-height: 935px) {
+  .image-wrapper {
+    display: none;
+  }
+}
+
+.dropdown-block:hover .dropdown-container {
+  display: block !important;
+}
+
+.cssanimation,
+.cssanimation span {
+  animation-duration: 1.6s;
+  animation-fill-mode: both;
+}
+
+.cssanimation span {
+  display: inline-block;
+}
+
+.fadeInBottom {
+  animation-name: fadeInBottom;
+}
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+*:focus {
+  outline: none;
+}
